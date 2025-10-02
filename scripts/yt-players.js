@@ -1,5 +1,5 @@
-const EMBEE_URL = 'https://www.youtube.com/embed/live_stream?channel=UCssl4L10ylDXBCSCzlaSKvg&autoplay=1&mute=1&controls=0';
-const LOL_URL = 'https://www.youtube.com/embed/live_stream?channel=UC8Wtr62XGvJx0VwU4YbzgiA&autoplay=1&mute=1&controls=0';
+const EMBEE_URL = 'https://www.youtube.com/embed/live_stream?channel=UCy7lny2Flbq6FAb7cv8eG0Q&autoplay=1&mute=1&controls=0';
+const LOL_URL = 'https://www.youtube.com/embed/live_stream?channel=UCvqRdlKsE5Q8mf8YXbdIJLw&autoplay=1&mute=1&controls=0';
 
 let players = {};
 
