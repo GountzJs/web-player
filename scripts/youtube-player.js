@@ -103,7 +103,7 @@ const validatePlayerMain = () => {
     OVERLAY_PLAY.classList.remove("none");
   } else {
     players["main"].unMute();
-    players["main"].setVolume(20);
+    players["main"].setVolume(10);
     if (
       !(
         !players["main"].getVideoData() ||
