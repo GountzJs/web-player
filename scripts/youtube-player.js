@@ -35,8 +35,8 @@ function onYouTubeIframeAPIReady() {
   });
 
   players["cam"] = new YT.Player("cam-player", {
-    height: "200",
-    width: "350",
+    height: "150",
+    width: "250",
     videoId: "",
     playerVars: {
       autoplay: 1,
