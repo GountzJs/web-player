@@ -12,27 +12,27 @@ var players = {};
 var isPlaying = false;
 
 function onYouTubeIframeAPIReady() {
-  players["main"] = new YT.Player("main-player", {
-    height: "100%",
-    width: "100%",
-    videoId: "",
-    playerVars: {
-      autoplay: 0,
-      controls: 0,
-      disablekb: 1,
-      enablejsapi: 1,
-      fs: 0,
-      iv_load_policy: 3,
-      modestbranding: 1,
-      playsinline: 1,
-      rel: 0,
-      showinfo: 0,
-    },
-    events: {
-      onReady: onMainReady,
-      onStateChange: onMainStateChange,
-    },
-  });
+  // players["main"] = new YT.Player("main-player", {
+  //   height: "100%",
+  //   width: "100%",
+  //   videoId: "",
+  //   playerVars: {
+  //     autoplay: 0,
+  //     controls: 0,
+  //     disablekb: 1,
+  //     enablejsapi: 1,
+  //     fs: 0,
+  //     iv_load_policy: 3,
+  //     modestbranding: 1,
+  //     playsinline: 1,
+  //     rel: 0,
+  //     showinfo: 0,
+  //   },
+  //   events: {
+  //     onReady: onMainReady,
+  //     onStateChange: onMainStateChange,
+  //   },
+  // });
 
   players["cam"] = new YT.Player("cam-player", {
     height: "150",
@@ -60,10 +60,10 @@ function onYouTubeIframeAPIReady() {
 const onMainReady = () => {
   console.log("Reproductor principal listo");
 
-  players["main"].loadVideoByUrl({
-    mediaContentUrl:
-      "https://www.youtube.com/embed/live_stream?channel=" + ID_MAIN,
-  });
+  // players["main"].loadVideoByUrl({
+  //   mediaContentUrl:
+  //     "https://www.youtube.com/embed/live_stream?channel=" + ID_MAIN,
+  // });
 };
 
 const onMainStateChange = (event) => {
@@ -90,24 +90,23 @@ const onCamStateChange = (event) => {
 };
 
 const validatePlayerMain = () => {
-  if (!players["main"]) return;
-
-  if (isPlaying) {
-    players["main"].pauseVideo();
-    OVERLAY_PLAY.classList.remove("none");
-  } else {
-    players["main"].unMute();
-    players["main"].setVolume(10);
-    if (
-      !(
-        !players["main"].getVideoData() ||
-        !players["main"].getVideoData().video_id
-      )
-    ) {
-      players["main"].playVideo();
-      OVERLAY_PLAY.style.display = "none";
-    }
-  }
+  // if (!players["main"]) return;
+  // if (isPlaying) {
+  //   players["main"].pauseVideo();
+  //   OVERLAY_PLAY.classList.remove("none");
+  // } else {
+  //   players["main"].unMute();
+  //   players["main"].setVolume(10);
+  //   if (
+  //     !(
+  //       !players["main"].getVideoData() ||
+  //       !players["main"].getVideoData().video_id
+  //     )
+  //   ) {
+  //     players["main"].playVideo();
+  //     OVERLAY_PLAY.style.display = "none";
+  //   }
+  // }
 };
 
 const validatePlayerCam = () => {
@@ -132,6 +131,6 @@ const validatePlayerCam = () => {
 };
 
 BUTTON_PLAY.addEventListener("click", () => {
-  validatePlayerMain();
+  // validatePlayerMain();
   validatePlayerCam();
 });
