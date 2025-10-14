@@ -12,25 +12,15 @@ var players = {};
 var isPlaying = false;
 
 function onYouTubeIframeAPIReady() {
-  const mainIframe = document.getElementById("main-player");
-  mainIframe.src =
-    "https://www.youtube.com/embed/live_stream?channel=" +
-    ID_MAIN +
-    "&enablejsapi=1";
-
-  const camIframe = document.getElementById("cam-player");
-  camIframe.src =
-    "https://www.youtube.com/embed/live_stream?channel=" +
-    ID_CAM +
-    "&enablejsapi=1";
-
   players["main"] = new YT.Player("main-player", {
     height: "100%",
     width: "100%",
+    videoId: "",
     playerVars: {
       autoplay: 0,
       controls: 0,
       disablekb: 1,
+      enablejsapi: 1,
       fs: 0,
       iv_load_policy: 3,
       modestbranding: 1,
@@ -47,10 +37,12 @@ function onYouTubeIframeAPIReady() {
   players["cam"] = new YT.Player("cam-player", {
     height: "150",
     width: "250",
+    videoId: "",
     playerVars: {
       autoplay: 1,
       controls: 0,
       disablekb: 1,
+      enablejsapi: 1,
       fs: 0,
       iv_load_policy: 3,
       modestbranding: 1,
@@ -68,16 +60,10 @@ function onYouTubeIframeAPIReady() {
 const onMainReady = () => {
   console.log("Reproductor principal listo");
 
-  if (
-    !players["main"].getVideoData() ||
-    !players["main"].getVideoData().video_id
-  ) {
-    const iframe = players["main"].getIframe();
-    iframe.src =
-      "https://www.youtube.com/embed/live_stream?channel=" +
-      ID_MAIN +
-      "&enablejsapi=1";
-  }
+  players["main"].loadVideoByUrl({
+    mediaContentUrl:
+      "https://www.youtube.com/embed/live_stream?channel=" + ID_MAIN,
+  });
 };
 
 const onMainStateChange = (event) => {
