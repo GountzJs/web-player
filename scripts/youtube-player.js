@@ -1,6 +1,6 @@
 const BUTTON_PLAY = document.getElementById("play-button");
 const OVERLAY_PLAY = document.getElementById("overlay-play");
-const ID_MAIN = "UC-I8d_BjKP6MMsYjZhAtjIA";
+const ID_MAIN = "UCvqRdlKsE5Q8mf8YXbdIJLw";
 const ID_CAM = "UCy7lny2Flbq6FAb7cv8eG0Q";
 
 var tag = document.createElement("script");
